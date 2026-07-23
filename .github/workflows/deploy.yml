@@ -1,4 +1,4 @@
-name: Deploy CI
+name: CI
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -6,27 +6,52 @@ concurrency:
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    types: [opened, synchronize, reopened]
-    
+
 jobs:
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
       deployments: write
       statuses: write
       pull-requests: write
 
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-      - name: Deploy to Vercel Action
-      - uses: nexterias/actions-vercel@v2
+      - uses: actions/checkout@v4
+
+      - uses: moonrepo/setup-toolchain@v0
+        with:
+          auto-install: true
+          proto-version: 0.34.4
+
+      - run: pnpm install
+      - run: pnpm format:check
+      - run: pnpm lint
+
+      - uses: nexterias/actions-vercel@v1
+        id: vercel
         with:
           token: ${{ secrets.VERCEL_TOKEN }}
           org-id: ${{ secrets.VERCEL_ORG_ID }}
           project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           production: ${{ github.ref == 'refs/heads/main' }}
+          prebuilt: true
+
+      - name: Lighthouse CI - Healthcheck
+        run: pnpm dlx @lhci/cli@0.13.x healthcheck --fatal
+
+      - name: Lighthouse CI - Collect
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            pnpm dlx @lhci/cli@0.13.x collect -n 1 --url https://www.nexterias.dev
+          else
+            pnpm dlx @lhci/cli@0.13.x collect -n 1 --url ${{ steps.vercel.outputs.deployment-url }}
+          fi
+
+      - name: Lighthouse CI - Upload
+        run: pnpm dlx @lhci/cli@0.13.x upload --githubToken ${{ secrets.GITHUB_TOKEN }} --target temporary-public-storage
