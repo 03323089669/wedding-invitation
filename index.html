@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahmed & Aqsa — Wedding Invitation</title>
-<meta name="description" content="You are cordially invited to the wedding celebrations of Ahmed Furqan Makhdoom & Aqsa Ali.">
+<title>Furqan & Aqsa — Wedding Invitation</title>
+<meta name="description" content="You are cordially invited to the wedding celebrations of Furqan & Aqsa Ali.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -136,6 +136,14 @@
   .invite-meta{ font-size:0.78rem; }
   .invite-meta b{ display:block; font-size:0.9rem; margin-top:.2rem; color:var(--maroon); }
   .invite-note{ margin-top:1.2rem; font-size:0.72rem; letter-spacing:.05em; color:var(--gold); opacity:.9; font-style:italic; }
+
+  /* ============ SECTION DIVIDER ============ */
+  .section-divider{
+    display:flex; align-items:center; justify-content:center; gap:.9rem;
+    max-width:400px; margin:1.6rem auto; padding:0 6vw;
+  }
+  .section-divider span{ flex:1; height:1px; background:var(--gold-dim); }
+  .section-divider .dot{ width:6px; height:6px; background:var(--gold); transform:rotate(45deg); flex-shrink:0; }
 
   /* ============ FIND YOUR WAY CARD ============ */
   .map-wrap{ padding:0 6vw 4vh; }
@@ -303,24 +311,24 @@
   <div class="env-triangle env-right"></div>
   <div class="env-triangle env-bottom"></div>
   <div class="env-triangle env-left"></div>
-  <div class="env-seal"><span>AA</span></div>
+  <div class="env-seal"><span>FA</span></div>
   <div class="env-tap">Tap to Open</div>
 </div>
 
 <!-- MUSIC TOGGLE -->
 <button class="music-toggle" id="musicToggle" title="Play background music" aria-label="Toggle background music">♪</button>
 <audio id="bgMusic" loop preload="auto">
-  <source src="assets/MUKALMA_TV_-_Khushiyan_da_Din_Charya_(mp3.pm).mp3" type="audio/mpeg">
+  <source src="assets/music.mp3" type="audio/mpeg">
 </audio>
 
 <!-- HERO -->
 <section class="hero" id="heroSection">
   <canvas id="fireworksCanvas"></canvas>
-  <div class="monogram"><span>AA</span></div>
-  <div class="hero-names script">Ahmed <span class="hero-amp">&amp;</span> Aqsa</div>
+  <div class="monogram"><span>FA</span></div>
+  <div class="hero-names script">Furqan <span class="hero-amp">&amp;</span> Aqsa</div>
   <div class="hero-date">29 August – 6 September 2026 · Karachi</div>
   <div class="hero-quote">May Allah bless this union with love, mercy &amp; barakah</div>
-  <a href="#invite-1" class="cta">Celebrate With Us ✦</a>
+  <a href="/#nikkah" class="cta">Celebrate With Us ✦</a>
 </section>
 
 <!-- FLORAL INTRO -->
@@ -362,9 +370,9 @@
     <path d="M10,10 L34,10 M10,10 L10,34" stroke="#C9A24B" stroke-width="1.2"/>
   </svg>
 
-  <div class="intro-monogram"><span>AA</span></div>
+  <div class="intro-monogram"><span>FA</span></div>
   <div class="intro-bismillah serif">In the name of Allah, the Most Beneficent &amp; the Most Merciful</div>
-  <div class="intro-names">Ahmed<span class="intro-amp">&amp;</span>Aqsa</div>
+  <div class="intro-names">Furqan<span class="intro-amp">&amp;</span>Aqsa</div>
   <div class="intro-diamond"></div>
   <div class="intro-line">Together with their families, request the honour of your presence &amp; blessings at the wedding celebrations</div>
   <div class="scroll-explore">Scroll to Explore<div class="mouse-icon"></div></div>
@@ -383,36 +391,38 @@
 </section>
 
 <!-- ============ FUNCTION 1: NIKKAH ============ -->
-<div class="invite-wrap" id="invite-1">
+<div class="invite-wrap" id="nikkah" data-event="nikkah">
   <div class="invite-card">
     <div class="invite-eyebrow smallcaps">Together with their families</div>
     <div class="invite-line">Request the honour of your presence &amp; blessings at the</div>
     <div class="invite-event smallcaps">Nikkah Ceremony</div>
-    <div class="invite-names script">Ahmed Furqan Makhdoom</div>
+    <div class="invite-names script">Furqan</div>
     <div class="invite-with">with</div>
     <div class="invite-names script">Aqsa Ali</div>
     <div class="invite-insha">Insha Allah on</div>
     <div class="invite-date smallcaps">Saturday | 29th | August 2026</div>
     <div class="divider"></div>
-    <div class="invite-venue smallcaps">Jama Masjid, Dawood Goth</div>
-    <div class="invite-address">Dawood Goth, Karachi</div>
+    <div class="invite-venue smallcaps">Dawood Masjid</div>
+    <div class="invite-address">Karachi</div>
     <div class="invite-meta-row">
-      <div class="invite-meta">Ceremony<b>[Add Time]</b></div>
+      <div class="invite-meta">Ceremony<b>Namaz-e-Asr</b></div>
     </div>
     <div class="invite-note">Please confirm the exact time with the family</div>
     <button class="reminder-btn" data-event="nikkah">🔔 Set Nikkah Reminder</button>
   </div>
 </div>
 
-<div class="map-wrap">
+<div class="section-divider" data-event="nikkah"><span></span><div class="dot"></div><span></span></div>
+
+<div class="map-wrap" data-event="nikkah">
   <div class="map-card">
     <div class="map-banner">
       <div class="find">Find Your Way</div>
-      <div class="venue-title script">Jama Masjid</div>
+      <div class="venue-title script">Dawood Masjid</div>
       <div class="pill">Nikkah Ceremony</div>
       <div class="datetime">29 August 2026</div>
     </div>
-    <div class="map-address">📍 Dawood Goth, Karachi</div>
+    <div class="map-address">📍 Dawood Masjid, Karachi</div>
     <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
       src="https://maps.google.com/maps?q=Jama+Masjid+Dawood+Goth+Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
     <a class="map-directions" target="_blank" rel="noopener"
@@ -421,26 +431,28 @@
 </div>
 
 <!-- ============ FUNCTION 1b: MEHNDI (same day) ============ -->
-<div class="invite-wrap">
+<div class="invite-wrap" id="mehndi" data-event="mehndi">
   <div class="invite-card">
     <div class="invite-eyebrow smallcaps">Together with their families</div>
     <div class="invite-line">Request the honour of your presence at the</div>
     <div class="invite-event smallcaps">Mehndi &amp; Qawali Night</div>
-    <div class="invite-names script">Ahmed <span class="hero-amp">&amp;</span> Aqsa</div>
+    <div class="invite-names script">Furqan <span class="hero-amp">&amp;</span> Aqsa</div>
     <div class="invite-insha">Insha Allah on</div>
     <div class="invite-date smallcaps">Saturday | 29th | August 2026</div>
     <div class="divider"></div>
     <div class="invite-venue smallcaps">Saima Luxury Homes</div>
     <div class="invite-address">Near the ground, Karachi</div>
     <div class="invite-meta-row">
-      <div class="invite-meta">Mehndi &amp; Qawali<b>[Add Time]</b></div>
+      <div class="invite-meta">Mehndi &amp; Qawali<b>8:30 PM</b></div>
     </div>
     <div class="invite-note">Please confirm the exact time with the family</div>
     <button class="reminder-btn" data-event="mehndi">🔔 Set Mehndi Reminder</button>
   </div>
 </div>
 
-<div class="map-wrap">
+<div class="section-divider" data-event="mehndi"><span></span><div class="dot"></div><span></span></div>
+
+<div class="map-wrap" data-event="mehndi">
   <div class="map-card">
     <div class="map-banner">
       <div class="find">Find Your Way</div>
@@ -457,12 +469,12 @@
 </div>
 
 <!-- ============ FUNCTION 2: BAAT ============ -->
-<div class="invite-wrap">
+<div class="invite-wrap" id="baraat" data-event="baraat">
   <div class="invite-card">
     <div class="invite-eyebrow smallcaps">Together with their families</div>
     <div class="invite-line">Request the honour of your presence &amp; blessings at the</div>
     <div class="invite-event smallcaps">Baraat</div>
-    <div class="invite-names script">Ahmed Furqan Makhdoom</div>
+    <div class="invite-names script">Furqan</div>
     <div class="invite-with">with</div>
     <div class="invite-names script">Aqsa Ali</div>
     <div class="invite-insha">Insha Allah on</div>
@@ -479,7 +491,9 @@
   </div>
 </div>
 
-<div class="map-wrap">
+<div class="section-divider" data-event="baraat"><span></span><div class="dot"></div><span></span></div>
+
+<div class="map-wrap" data-event="baraat">
   <div class="map-card">
     <div class="map-banner">
       <div class="find">Find Your Way</div>
@@ -496,12 +510,12 @@
 </div>
 
 <!-- ============ FUNCTION 3: VALIMA ============ -->
-<div class="invite-wrap">
+<div class="invite-wrap" id="valima" data-event="valima">
   <div class="invite-card">
     <div class="invite-eyebrow smallcaps">Together with their families</div>
     <div class="invite-line">Request the honour of your presence &amp; blessings at the</div>
     <div class="invite-event smallcaps">Valima Reception</div>
-    <div class="invite-names script">Ahmed Furqan Makhdoom</div>
+    <div class="invite-names script">Furqan</div>
     <div class="invite-with">with</div>
     <div class="invite-names script">Aqsa Ali</div>
     <div class="invite-insha">Insha Allah on</div>
@@ -509,6 +523,7 @@
     <div class="divider"></div>
     <div class="invite-venue smallcaps">Zam Zam Banquet</div>
     <div class="invite-address">Sector 4-A, Surjani Town, Karachi</div>
+    <div class="invite-note" style="margin-top:.3rem;">📍 Please enter via the Colony Gate</div>
     <div class="invite-meta-row">
       <div class="invite-meta">Gathering<b>[Add Time]</b></div>
       <div class="invite-meta">Dinner<b>[Add Time]</b></div>
@@ -518,7 +533,9 @@
   </div>
 </div>
 
-<div class="map-wrap">
+<div class="section-divider" data-event="valima"><span></span><div class="dot"></div><span></span></div>
+
+<div class="map-wrap" data-event="valima">
   <div class="map-card">
     <div class="map-banner">
       <div class="find">Find Your Way</div>
@@ -526,7 +543,7 @@
       <div class="pill">Valima Reception</div>
       <div class="datetime">6 September 2026</div>
     </div>
-    <div class="map-address">📍 Sector 4-A, Surjani Town, Karachi</div>
+    <div class="map-address">📍 Sector 4-A, Surjani Town, Karachi<br><span style="font-size:0.72rem; opacity:.75;">Please enter via the Colony Gate</span></div>
     <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
       src="https://maps.google.com/maps?q=Zam+Zam+Banquet+Surjani+Town+Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
     <a class="map-directions" target="_blank" rel="noopener"
@@ -544,7 +561,7 @@
       <div class="flower">💐</div>
       <div class="quote">"And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts."</div>
       <cite>— Qur'an, Ar-Rūm 30:21</cite>
-      <div class="wish">Wishing Ahmed &amp; Aqsa a lifetime of love, laughter &amp; barakah!</div>
+      <div class="wish">Wishing Furqan &amp; Aqsa a lifetime of love, laughter &amp; barakah!</div>
     </div>
     <canvas id="scratchCanvas"></canvas>
   </div>
@@ -565,42 +582,66 @@
 </div>
 
 <footer>
-  <div class="names">Ahmed &amp; Aqsa</div>
+  <div class="names">Furqan &amp; Aqsa</div>
   <div class="foot-note">We look forward to celebrating with you across all three functions. Your presence is our greatest gift.</div>
-  <a href="#invite-1" class="cta" id="footerCelebrateBtn" style="margin-top:1.8rem; opacity:1;">Celebrate With Us ✦</a>
+  <a href="/#nikkah" class="cta" id="footerCelebrateBtn" style="margin-top:1.8rem; opacity:1;">Celebrate With Us ✦</a>
   <div class="foot-line">29 August — 6 September 2026 · Karachi</div>
 </footer>
 
 <script>
-  // ---- envelope cover: lock scroll, open on tap ----
+  // ---- envelope cover + background music (single source of truth) ----
   document.documentElement.classList.add('locked');
   const envelopeCover = document.getElementById('envelopeCover');
   const bgMusicEl = document.getElementById('bgMusic');
   const musicToggleEl = document.getElementById('musicToggle');
+  let musicPlaying = false;
 
-  function startMusic(){
-    bgMusicEl.muted = false;
-    bgMusicEl.volume = 1;
+  function playMusic(){
     const p = bgMusicEl.play();
     if(p && p.then){
       p.then(()=>{
         musicPlaying = true;
-        musicToggleEl.textContent='❚❚';
+        musicToggleEl.textContent = '❚❚';
         musicToggleEl.classList.add('spinning');
       }).catch((err)=>{
-        console.warn('Music autoplay blocked, will retry on next tap:', err);
-        const retry = ()=>{ startMusic(); document.removeEventListener('pointerdown', retry); };
-        document.addEventListener('pointerdown', retry, { once:true });
+        console.warn('Music play was blocked by the browser:', err);
+        musicPlaying = false;
+        musicToggleEl.textContent = '♪';
+        musicToggleEl.classList.remove('spinning');
       });
     }
   }
+  function pauseMusic(){
+    bgMusicEl.pause();
+    musicPlaying = false;
+    musicToggleEl.textContent = '♪';
+    musicToggleEl.classList.remove('spinning');
+  }
+
+  // manual toggle button always works, tap on it counts as a fresh user gesture
+  musicToggleEl.addEventListener('click', ()=>{
+    if(musicPlaying) pauseMusic(); else playMusic();
+  });
 
   envelopeCover.addEventListener('click', ()=>{
     envelopeCover.classList.add('opened');
     document.documentElement.classList.remove('locked');
-    bgMusicEl.load();
-    startMusic();
-    setTimeout(()=>{ envelopeCover.classList.add('hidden'); }, 950);
+    playMusic();
+    setTimeout(()=>{
+      envelopeCover.classList.add('hidden');
+      // deep-link: #nikkah / #mehndi / #baraat / #valima shows ONLY that function's card —
+      // hero, intro, countdown, scratch-card and footer are all hidden, just that one invite + map remain
+      const validTargets = ['nikkah','mehndi','baraat','valima'];
+      const hash = location.hash.replace('#','');
+      if(validTargets.includes(hash)){
+        document.querySelectorAll('.invite-wrap[data-event], .section-divider[data-event], .map-wrap[data-event]').forEach(el=>{
+          if(el.dataset.event !== hash) el.style.display = 'none';
+        });
+        document.querySelectorAll('.hero, .intro-section, .countdown-section, .surprise-section, footer').forEach(el=>{
+          el.style.display = 'none';
+        });
+      }
+    }, 950);
   }, { once:true });
 
   // ---- footer celebrate button: explicit smooth scroll (guaranteed to work) ----
@@ -608,7 +649,7 @@
   if(footerBtn){
     footerBtn.addEventListener('click', (e)=>{
       e.preventDefault();
-      const target = document.getElementById('invite-1');
+      const target = document.getElementById('nikkah');
       if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
     });
   }
@@ -734,31 +775,31 @@
   const eventData = {
     nikkah: {
       eyebrow: 'Nikkah Ceremony', title: 'Set a Reminder',
-      dateStr: 'Saturday, 29 August 2026 · Jama Masjid, Dawood Goth, Karachi',
+      dateStr: 'Saturday, 29 August 2026 · Dawood Masjid, Karachi',
       alertLabel: 'Please set your own reminder time',
       start: '20260829T160000', end: '20260829T180000',
-      gLocation: 'Jama Masjid, Dawood Goth, Karachi', title2: 'Nikkah Ceremony — Ahmed & Aqsa'
+      gLocation: 'Jama Masjid, Dawood Goth, Karachi', title2: 'Nikkah Ceremony — Furqan & Aqsa'
     },
     mehndi: {
       eyebrow: 'Mehndi & Qawali Night', title: 'Set a Reminder',
       dateStr: 'Saturday, 29 August 2026 · Saima Luxury Homes, Karachi',
       alertLabel: 'Please set your own reminder time',
-      start: '20260829T200000', end: '20260829T230000',
-      gLocation: 'Saima Luxury Homes, Karachi', title2: 'Mehndi & Qawali Night — Ahmed & Aqsa'
+      start: '20260829T203000', end: '20260829T230000',
+      gLocation: 'Saima Luxury Homes, Karachi', title2: 'Mehndi & Qawali Night — Furqan & Aqsa'
     },
     baraat: {
       eyebrow: 'Baraat', title: 'Set a Reminder',
       dateStr: 'Saturday, 5 September 2026 · Saffron Banquet, Karachi',
       alertLabel: 'Please set your own reminder time',
       start: '20260905T180000', end: '20260905T220000',
-      gLocation: 'Saffron Banquet, Gulistan-e-Johar, Karachi', title2: 'Baraat — Ahmed & Aqsa'
+      gLocation: 'Saffron Banquet, Gulistan-e-Johar, Karachi', title2: 'Baraat — Furqan & Aqsa'
     },
     valima: {
       eyebrow: 'Valima Reception', title: 'Set a Reminder',
       dateStr: 'Sunday, 6 September 2026 · Zam Zam Banquet, Karachi',
       alertLabel: 'Please set your own reminder time',
       start: '20260906T190000', end: '20260906T230000',
-      gLocation: 'Zam Zam Banquet, Surjani Town, Karachi', title2: 'Valima Reception — Ahmed & Aqsa'
+      gLocation: 'Zam Zam Banquet, Surjani Town, Karachi', title2: 'Valima Reception — Furqan & Aqsa'
     }
   };
 
@@ -773,7 +814,7 @@
       document.getElementById('mEyebrow').textContent = ev.eyebrow;
       document.getElementById('mDatetime').textContent = ev.dateStr;
       document.getElementById('mAlert').innerHTML = ev.alertLabel;
-      const gUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(ev.title2)}&dates=${ev.start}/${ev.end}&location=${encodeURIComponent(ev.gLocation)}&details=${encodeURIComponent('Wedding celebration for Ahmed & Aqsa')}`;
+      const gUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(ev.title2)}&dates=${ev.start}/${ev.end}&location=${encodeURIComponent(ev.gLocation)}&details=${encodeURIComponent('Wedding celebration for Furqan & Aqsa')}`;
       document.getElementById('mGoogleBtn').href = gUrl;
       modal.classList.add('open');
     });
@@ -785,32 +826,16 @@
   document.getElementById('mAppleBtn').addEventListener('click', ()=>{
     if(!activeEvent) return;
     const ics = [
-      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Ahmed & Aqsa Wedding//EN','BEGIN:VEVENT',
+      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Furqan & Aqsa Wedding//EN','BEGIN:VEVENT',
       `DTSTART:${activeEvent.start}`,`DTEND:${activeEvent.end}`,
       `SUMMARY:${activeEvent.title2}`,`LOCATION:${activeEvent.gLocation}`,
-      'DESCRIPTION:Wedding celebration for Ahmed & Aqsa','END:VEVENT','END:VCALENDAR'
+      'DESCRIPTION:Wedding celebration for Furqan & Aqsa','END:VEVENT','END:VCALENDAR'
     ].join('\r\n');
     const blob = new Blob([ics], { type:'text/calendar' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = `${activeEvent.eyebrow.replace(/\s+/g,'-')}.ics`;
     a.click();
-  });
-
-  // ---- music toggle ----
-  const music = document.getElementById('bgMusic');
-  const musicBtn = document.getElementById('musicToggle');
-  let musicPlaying = false;
-  musicBtn.addEventListener('click', ()=>{
-    if(!musicPlaying){
-      music.play().then(()=>{
-        musicPlaying = true; musicBtn.textContent='❚❚'; musicBtn.classList.add('spinning');
-      }).catch(()=>{
-        alert('Add your music file at assets/music.mp3 to enable background music.');
-      });
-    } else {
-      music.pause(); musicPlaying = false; musicBtn.textContent='♪'; musicBtn.classList.remove('spinning');
-    }
   });
 
 </script>
