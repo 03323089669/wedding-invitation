@@ -1,4 +1,4 @@
-name: CI
+name: deploy
 
 on:
   push:
@@ -12,15 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - run: npm install
-
-      - run: npm run build
 
       - uses: nexterias/actions-vercel@v2
         with:
